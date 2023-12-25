@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+<h1 id="taunt"></h1>
+
+<script type="text/javascript">
+    // Get the current domain
+    var currentDomain = window.location.hostname;
+
+    // Extract the first subdomain
+    var subdomain = extractFirstSubdomain(currentDomain);
+    if (subdomain) {
+
+        var taunt = subdomain + " you're sofa king stupid!";
+
+        // Display the subdomain in the heading
+        document.getElementById("taunt").innerText = taunt;
+
+        // Update the title of the page with the contents of the subdomain
+        document.title = taunt;
+    }
+
+    // Function to extract the first subdomain
+    function extractFirstSubdomain(domain) {
+        var subdomains = domain.split('.');
+        if (subdomains.length > 2) {
+            return subdomains[0];
+        }
+
+        return null;
+    }
+</script>
+
+</body>
+</html>
